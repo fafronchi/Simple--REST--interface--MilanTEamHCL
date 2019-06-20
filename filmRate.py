@@ -23,9 +23,9 @@ def ratings(film, KEY):
             rateLine = [el for el in respDict['Ratings'] if el['Source'] == 'Rotten Tomatoes']
             if rateLine:
                 rating = rateLine.pop()['Value']
-                print(f"Rotten Tomatoes rating for \"{respDict['Title']}\" => {rating}")
+                print("Rotten Tomatoes rating for \"{0} => {1}\"".format(respDict['Title'], rating))
             else:
-                print(f"Rotten Tomatoes rating not availble for \"{respDict['Title']}\"")
+                print("Rotten Tomatoes rating not availble for \"{}\"".format(respDict['Title']))
         else:
             print("ERROR:  ", respDict['Error'])
     else:
